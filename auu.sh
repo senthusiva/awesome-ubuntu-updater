@@ -46,6 +46,7 @@ touch $tmp_remove_file
 echo -e "${color_green}++++ List of upgradable packages ++++${color_default}"
 if [[ $list_upgradable ]]; then
     bool_upgrade_is=true
+    echo "$list_upgradable"
     echo "$list_upgradable" >> $tmp_update_file
 else
     echo -e "${color_green}Looks fine, nothing to upgrade...${color_default}"
@@ -55,6 +56,7 @@ echo -e "\n"
 echo -e "${color_red}---- List of removable packages ----${color_default}"
 if [[ $list_removable ]]; then
     bool_remove_is=true
+    echo "$list_removable"
     echo "$list_removable"  >> $tmp_remove_file
 else
     echo -e "${color_red}Looks fine, nothing to remove...${color_default}"
