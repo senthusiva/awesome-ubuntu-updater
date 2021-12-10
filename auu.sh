@@ -15,6 +15,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 
+
 #Define upgradable and removable
 list_upgradable=$(apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,:,\+]+)\)? /i) {print "PROGRAM: $1 INSTALLED: $2 AVAILABLE: $3\n"}' | column -s " |" -t)
 list_removable=$(apt-get --dry-run autoremove | grep -Po '^Remv \K[^ ]+')
