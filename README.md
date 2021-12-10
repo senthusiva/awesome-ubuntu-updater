@@ -7,27 +7,49 @@ Thank you and have fun with the scripts.
 
 ## Installation and Usage
 ### Get a single script
-* `wget -L ...`
-* `chmod +x ...`
-* `./...`
+e.g. updater.sh:
+
+* `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/updater.sh`
+* `chmod +x updater.sh`
+* `./updater.sh`
 
 ### Get all the scripts
-* `git clone ...`
-* `cd ...`
+* `git clone https://github.com/senthusiva/script-toolbox.git`
+* `cd script-toolbox`
 * `chmod +x *.sh`
 
 ## Scripts
 1. [updater.sh](#updater.sh)
-2. [updater.sh](#updater.sh)
+2. [randfacts.sh](#randfacts.sh)
 
 <a name="updater.sh"></a>
 ### updater.sh
-About:
-Usage:
-Download:
+* About: beginner friendly way to upgrade your linux applications.
+* Usage:
+  ```
+  $ sudo ./updater.sh
+    ++++ List of upgradable packages ++++
+    (...)
+    PROGRAM: package 1 (...)
+    PROGRAM: package 2 (...)
+    (...)
+    
+    ---- List of removable packages ----
+    PROGRAM: package A (...)
+    PROGRAM: package B (...)
+    (...)
+  ```
+* Download: `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/updater.sh`
 
-<a name="updater.sh"></a>
+<a name="randfacts.sh"></a>
 ### randfacts.sh
-About:
-Usage:
-Download:
+* About: get useful and fun facts about certain numbers.
+* Usage:
+  ```
+  $ ./randfacts.sh 24
+  Trivia: 24 is the number of accepted runners in the Melbourne Cup.
+  Year: 24 is the year that Philo declares that the Old Testament is the eternal law of God.
+  Date: December 24th is the day in 1294 that Pope Boniface VIII is elected Pope, replacing St. Celestine V, who had resigned.
+  Math: 24 is a highly composite number, having more divisors than any smaller number.
+  ```
+* Download: `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/randfacts.sh`
