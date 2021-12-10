@@ -1,7 +1,7 @@
 # Script Toolbox
 
-<a href="" alt=""><img src="https://img.shields.io/pypi/l/fpvgcc.svg?style=for-the-badge&logo=appveyor" /></a>
-<a href="" alt=""><img src="https://img.shields.io/github/release/senthusiva/script-toolbox?style=for-the-badge&logo=appveyor" /></a>
+<a href="" alt=""><img src="https://img.shields.io/badge/License-GPLv3-success.svg?style=for-the-badge&logo=appveyor" /></a>
+<a href="" alt=""><img src="https://img.shields.io/github/release/senthusiva/script-toolbox?color=blue&style=for-the-badge&logo=appveyor" /></a>
 
 ## About
 In the Script Toolbox you will find a collection of scripts that I have created and will create in the future. I am using this opportunity to learn more about scripting. The scripts were made with the help of Linux man pages and the StackOverflow community. If you find a bug or have a feature request, you're welcome to create an issue.
