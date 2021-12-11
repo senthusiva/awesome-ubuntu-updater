@@ -17,13 +17,15 @@ e.g. updater.sh:
 * `./updater.sh`
 
 ### Get all the scripts
-* `git clone https://github.com/senthusiva/script-toolbox.git`
-* `cd script-toolbox`
+* Download the latest [Release](https://github.com/senthusiva/script-toolbox/releases) (zip)
+* `unzip script-toolbox-*.zip`
+* `cd script-toolbox-*/src`
 * `chmod +x *.sh`
 
 ## Scripts
-1. [updater.sh](#updater.sh)
-2. [randfacts.sh](#randfacts.sh)
+* [updater.sh](#updater.sh)
+* [randfacts.sh](#randfacts.sh)
+* [githubinfo.sh](#githubinfo.sh)
 
 <a name="updater.sh"></a>
 ### updater.sh
@@ -43,6 +45,7 @@ e.g. updater.sh:
     (...)
   ```
 * Download: `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/updater.sh`
+---------------------------------------------------------------------------------------
 
 <a name="randfacts.sh"></a>
 ### randfacts.sh
@@ -56,3 +59,22 @@ e.g. updater.sh:
   Math: 24 is a highly composite number, having more divisors than any smaller number.
   ```
 * Download: `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/randfacts.sh`
+---------------------------------------------------------------------------------------
+
+<a name="githubinfo.sh"></a>
+### githubinfo.sh
+* About: get info about github user
+* Usage:
+  ```
+  $ ./githubinfo.sh senthusiva
+  Name:  Senthu Siva
+  URL:  https://github.com/senthusiva
+  Company:  null
+  Website:  senthu.xyz
+  E-Mail:  null
+  Followers:  3
+  Following:  3
+  Created at:  2016-04-23T09:49:52Z
+  Last updated:  2021-12-10T10:32:44Z
+  ```
+* Download: `wget -L https://github.com/senthusiva/script-toolbox/blob/main/src/githubinfo.sh`
