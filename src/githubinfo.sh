@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#################################################################
+# Copyright (C) 2021 Senthu Siva
+# GNU General Public License v3.0
+# https://github.com/senthusiva/script-toolbox/blob/main/LICENSE
+#################################################################
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <username>"
   exit 1
