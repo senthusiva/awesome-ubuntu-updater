@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#################################################################
+# Copyright (C) 2021 Senthu Siva
+# GNU General Public License v3.0
+# https://github.com/senthusiva/script-toolbox/blob/main/LICENSE
+#################################################################
 
 #Define colors and formats
 color_default=$(tput sgr0)
