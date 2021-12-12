@@ -34,11 +34,3 @@ echo -e "Last updated: " $(getInfo ".updated_at")
 <<<<<<< HEAD
 
 rm $tmp_json
-
-
-
-
-
-
-=======
->>>>>>> 2ff01efbf24c1c39f80daa67134da2a92162accd
