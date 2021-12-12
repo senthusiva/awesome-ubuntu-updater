@@ -5,9 +5,15 @@ if [ $# -ne 1 ]; then
   exit 1
 fi
 
-username=$1
+tmp_json=tmp_githubinfo.json;
+if [ -f "$tmp_json" ]; then
+    rm $tmp_json
+fi
+
+curl -s "https://api.github.com/users/$1" >> $tmp_json
+
 function getInfo() {
-    curl -s "https://api.github.com/users/$username" | jq -r "$1"
+    cat $tmp_json | jq -r "$1"
 }
 
 echo -e "Name: " $(getInfo ".name")
@@ -20,6 +26,7 @@ echo -e "Following: " $(getInfo ".following")
 echo -e "Created at: " $(getInfo ".created_at")
 echo -e "Last updated: " $(getInfo ".updated_at")
 
+rm $tmp_json
 
 
 
