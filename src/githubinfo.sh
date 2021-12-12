@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#################################################################
+# Copyright (C) 2021 Senthu Siva
+# GNU General Public License v3.0
+# https://github.com/senthusiva/script-toolbox/blob/main/LICENSE
+#################################################################
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <username>"
   exit 1
@@ -25,6 +31,7 @@ echo -e "Followers: " $(getInfo ".followers")
 echo -e "Following: " $(getInfo ".following")
 echo -e "Created at: " $(getInfo ".created_at")
 echo -e "Last updated: " $(getInfo ".updated_at")
+<<<<<<< HEAD
 
 rm $tmp_json
 
@@ -33,3 +40,5 @@ rm $tmp_json
 
 
 
+=======
+>>>>>>> 2ff01efbf24c1c39f80daa67134da2a92162accd

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#################################################################
+# Copyright (C) 2021 Senthu Siva
+# GNU General Public License v3.0
+# https://github.com/senthusiva/script-toolbox/blob/main/LICENSE
+#################################################################
+
 printf "Trivia: "
 curl -s "http://numbersapi.com/$1" 
 printf "\n\n"
