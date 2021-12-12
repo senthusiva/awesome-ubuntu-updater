@@ -31,6 +31,5 @@ echo -e "Followers: " $(getInfo ".followers")
 echo -e "Following: " $(getInfo ".following")
 echo -e "Created at: " $(getInfo ".created_at")
 echo -e "Last updated: " $(getInfo ".updated_at")
-<<<<<<< HEAD
 
 rm $tmp_json
