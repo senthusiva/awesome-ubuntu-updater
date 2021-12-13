@@ -20,15 +20,15 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 
-
 #Define upgradable and removable
 list_upgradable=$(apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,:,\+]+)\)? /i) {print "PROGRAM: $1 INSTALLED: $2 AVAILABLE: $3\n"}' | column -s " |" -t)
+list_upgradable_done=$(apt-get --just-print upgrade 2>&1 | perl -ne 'if (/Inst\s([\w,\-,\d,\.,~,:,\+]+)\s\[([\w,\-,\d,\.,~,:,\+]+)\]\s\(([\w,\-,\d,\.,~,:,\+]+)\)? /i) {print "PROGRAM: $1\n"}' | column -s " |" -t)
 list_removable=$(apt-get --dry-run autoremove | grep -Po '^Remv \K[^ ]+')
 
 
 #Define status messages and questions
-msg_upgrade_success="${color_green}Done. Following packages successfully updated: ${color_default}"
-msg_remove_success="${color_green}Done. Following packages successfully removed: ${color_default}"
+msg_upgrade_success="${color_green}Done. Following packages were successfully updated: ${color_default}"
+msg_remove_success="${color_green}Done. Following packages were successfully removed: ${color_default}"
 msg_question_upgrade="Do you want to update the packages now? [Y|n]:${color_default} "
 msg_question_remove="Do you want to remove packages that are no longer needed? [Y|n]:${color_default} "
 msg_invalid_input="${color_red}Invalid input. Please type Y(es) or n(o)!${color_default}"
@@ -36,7 +36,7 @@ msg_invalid_input="${color_red}Invalid input. Please type Y(es) or n(o)!${color_
 
 #Update the package repository and clear the screen 
 apt-get update
-clear
+clear -x
 
 
 #List upgradable and removable packages
@@ -53,7 +53,7 @@ echo -e "${color_green}++++ List of upgradable packages ++++${color_default}"
 if [[ $list_upgradable ]]; then
     bool_upgrade_is=true
     echo "$list_upgradable"
-    echo "$list_upgradable" >> $tmp_update_file
+    echo "$list_upgradable_done" >> $tmp_update_file
 else
     echo -e "${color_green}Looks fine, nothing to upgrade...${color_default}"
 fi
@@ -84,7 +84,6 @@ if [ "$bool_upgrade_is" = true ]; then
     fi
 fi
 
-
 if [ "$bool_remove_is" = true ]; then
     read -p "${msg_question_remove}" confm_remove
     if [ "$confm_remove" = "Y" ]; then
@@ -100,7 +99,7 @@ fi
 echo -e "\n"
 
 
-   
+
 #execute upgrade, remove command and clean up
 if [ "$bool_upgrade_is" = true ]; then
     apt-get upgrade -y
@@ -111,17 +110,21 @@ if [ "$bool_remove_is" = true ]; then
     apt-get clean -y
 fi
 
-
+clear -x
 #print status message
 echo -e "\n\n"
 if [ "$bool_upgrade_is" = true ]; then
     echo "${msg_upgrade_success}"
+    echo "$color_green"
     cat $tmp_update_file
+    echo "$color_default"
 fi
 
 if [ "$bool_remove_is" = true ]; then
     echo "${msg_remove_success}"
+    echo "$color_red"
     cat $tmp_remove_file
+    echo "$color_default"
 fi
 echo -e "\n"
 rm $tmp_update_file
